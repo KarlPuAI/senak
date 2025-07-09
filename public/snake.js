@@ -85,6 +85,7 @@ function collision(head, arr) {
 }
 
 function submitScore() {
+  console.log('submitScore');
   fetch('/api/score', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
