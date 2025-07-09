@@ -8,6 +8,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.post('/api/score', async (req, res) => {
   const { player_name, score } = req.body;
+  console.log('Received score submission:', { player_name, score });
+
   try {
     await pool.query(
       'INSERT INTO public.player_score (player_name, score) VALUES ($1, $2)',
